@@ -1,14 +1,14 @@
 ---
-title: "Your Name"
+title: "Siva Sai Chandragiri"
 toc: false
-image: "your photo.jpg"
+image: "Siva jpg.png"
 about:
   template: trestles
   links:
   - text: GitHub
     href: link
   - text: email
-    href:  link
+    href: sivasai-chandragiri@ou.edu
 ---
 
 ::: {.columnpage}
@@ -21,8 +21,8 @@ Welcome to my research profile website. I'm a student in the Intro to Reproducib
 
 Replace this section with information about yourself:
 
-- **Name:** Your Name Here
-- **Institution:** Your University
+- **Name:** Siva Sai Chandragiri
+- **Institution:** The University of Oklhoma HSC
 - **Research Interests:** Add your research interests here
 - **Email:** your.email@university.edu
 

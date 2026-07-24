@@ -8,7 +8,7 @@ Here are my research projects and work:
 
 ## Final Report
 
-My final project for CELL 6351 - Intro to Reproducible Data Analysis Using R.
+Investigating Control  Vs Whole Brain Irradiation transcriptome
 
 [**View Final Report** →](projects/final-report.qmd)
 
