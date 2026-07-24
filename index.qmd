@@ -1,5 +1,5 @@
 ---
-title: "Siva Sai Chandragiri"
+title: "Siva Sai Chandragiri "
 toc: false
 image: "Siva jpg.png"
 about:

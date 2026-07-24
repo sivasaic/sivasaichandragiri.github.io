@@ -1,0 +1,17 @@
+{
+  "hash": "352143091241ef9640850636f59575d7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Final Report: [Your Project Title]\"\ndate: 2026-06-04\nauthor: \"Your Name\"\n---\n\n# Final Report: [Your Project Title]\n\n## Introduction\n\nReplace this with an introduction to your research question or project. What are you investigating? Why does it matter?\n\n## Methods\n\nDescribe how you conducted your analysis. What data did you use? What analyses did you perform?\n\n## Results\n\nShare your findings here. You can include:\n\n- Text explanations\n- Tables\n- Figures and visualizations\n- Code examples (if relevant)\n\n### Example Code Block\n\nHere's a sample R code block:\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load a library\nlibrary(ggplot2)\n\n# Create some sample data\ndata <- data.frame(\n  x = 1:10,\n  y = rnorm(10)\n)\n\n# Make a plot\nplot(data$x, data$y)\n```\n\n::: {.cell-output-display}\n![](final-report_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n### Example Table\n\n| Method | Result | P-value |\n|--------|--------|---------|\n| Analysis 1 | Significant | 0.01 |\n| Analysis 2 | Not Significant | 0.15 |\n\n## Discussion\n\nWhat do your results mean? How do they relate to your research question? What limitations exist? What would you do next?\n\n## Conclusions\n\nSummarize your findings and their implications.\n\n## References\n\nAdd any references to papers, data sources, or resources you used.\n\n---\n\n**Last updated:** June 2026\n",
+    "supporting": [
+      "final-report_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
