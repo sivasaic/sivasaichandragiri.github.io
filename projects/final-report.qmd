@@ -4,9 +4,6 @@ author: "Siva Sai Chandragiri"
 date: 2026-07-31
 ---
 
-# How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse
-
-
 ## On This Page
 
 - [The Problem: Why Brain Radiation Causes Cognitive Decline](#introduction)
