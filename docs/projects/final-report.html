@@ -160,12 +160,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#final-report" id="toc-final-report" class="nav-link active" data-scroll-target="#final-report">Final report :</a>
+  <li><a href="#how-brain-radiation-affects-blood-vessel-cells-a-single-cell-rna-seq-glimpse" id="toc-how-brain-radiation-affects-blood-vessel-cells-a-single-cell-rna-seq-glimpse" class="nav-link active" data-scroll-target="#how-brain-radiation-affects-blood-vessel-cells-a-single-cell-rna-seq-glimpse">How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse</a>
   <ul class="collapse">
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
   <li><a href="#on-this-page" id="toc-on-this-page" class="nav-link" data-scroll-target="#on-this-page">On This Page</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">The Problem: Why Brain Radiation Causes Cognitive Decline</a></li>
-  <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis">The Hypothesis: Endothelial Senescence Drives Vascular Fragility</a></li>
+  <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis">Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility</a></li>
+  <li><a href="#endothelial-focus" id="toc-endothelial-focus" class="nav-link" data-scroll-target="#endothelial-focus">Why Focus on Endothelial Cells?</a></li>
   <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading">Data Acquisition: From Sequencer to R</a>
   <ul class="collapse">
   <li><a href="#experimental-design" id="toc-experimental-design" class="nav-link" data-scroll-target="#experimental-design">Experimental Design</a></li>
@@ -240,16 +240,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="final-report" class="level1">
-<h1>Final report :</h1>
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-</section>
+<section id="how-brain-radiation-affects-blood-vessel-cells-a-single-cell-rna-seq-glimpse" class="level1">
+<h1>How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse</h1>
 <section id="on-this-page" class="level2">
 <h2 class="anchored" data-anchor-id="on-this-page">On This Page</h2>
 <ul>
 <li><a href="#introduction">The Problem: Why Brain Radiation Causes Cognitive Decline</a></li>
-<li><a href="#hypothesis">The Hypothesis: Endothelial Senescence Drives Vascular Fragility</a></li>
+<li><a href="#hypothesis">Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility</a></li>
+<li><a href="#endothelial-focus">Why Focus on Endothelial Cells?</a></li>
 <li><a href="#data-loading">Data Acquisition: From Sequencer to R</a></li>
 <li><a href="#qc">Quality Control: Separating Signal from Noise</a></li>
 <li><a href="#cell-abundance">First Look at the Data: Cell Type Composition</a></li>
@@ -263,19 +261,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Whole brain irradiation (WBI) is a standard treatment for patients with multiple brain metastases. Despite its clinical value, about 50% of long-term survivors develop progressive neurocognitive decline that severely reduces quality of life.</p>
 </section>
 <section id="hypothesis" class="level2">
-<h2 class="anchored" data-anchor-id="hypothesis">The Hypothesis: Endothelial Senescence Drives Vascular Fragility</h2>
+<h2 class="anchored" data-anchor-id="hypothesis">Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility</h2>
 <p>Growing preclinical evidence points to radiation-induced cerebrovascular injury as a central driver of this decline. Here, we test the hypothesis that <strong>WBI-induced endothelial senescence promotes cerebrovascular fragility</strong>, leading to cerebral microhemorrhages (CMHs) that mimic accelerated vascular aging.</p>
+</section>
+<section id="endothelial-focus" class="level2">
+<h2 class="anchored" data-anchor-id="endothelial-focus">Why Focus on Endothelial Cells?</h2>
+<p>Endothelial cells are a key part of the neurovascular unit and are essential for maintaining blood-brain barrier integrity, regulating cerebral blood flow, and preserving normal brain function. Because of these roles, endothelial injury may be one of the main ways that whole brain irradiation leads to long-term cerebrovascular dysfunction and cognitive decline.</p>
+<p>This focus is supported by our lab’s previous work showing that <strong>WBI induces endothelial dysfunction in the mouse brain and produces an accelerated vascular aging-like phenotype</strong>. In addition, senolytic treatment with Navitoclax/ABT263 has been shown to reduce WBI-induced blood-brain barrier disruption, further suggesting that senescent endothelial cells may play an important role in radiation-related brain injury [1-3].</p>
 </section>
 <section id="data-loading" class="level2">
 <h2 class="anchored" data-anchor-id="data-loading">Data Acquisition: From Sequencer to R</h2>
 <section id="experimental-design" class="level3">
 <h3 class="anchored" data-anchor-id="experimental-design">Experimental Design</h3>
 <ul>
-<li><strong>Subjects</strong>: Young mice</li>
-<li><strong>Treatment</strong>: Fractionated WBI protocol (5 Gy twice weekly for four weeks total of 40 Gy)</li>
-<li><strong>Timepoint</strong>: Two months post-treatment</li>
-<li><strong>Method</strong>: 10x Genomics Chromium Single Cell 3′ Gene Expression</li>
+<li><strong>Subjects:</strong> Young mice<br>
+</li>
+<li><strong>Treatment:</strong> Fractionated Whole-Brain X-ray Irradiation (WBI) at a clinically relevant dose of 5 Gy twice weekly for four weeks, for a total dose of 40 Gy<br>
+</li>
+<li><strong>Timepoint:</strong> Two months post-treatment; FACS and scRNA-seq readouts<br>
+</li>
+<li><strong>Method:</strong> 10x Genomics Chromium Single Cell 3′ Gene Expression</li>
 </ul>
+<p>Figure 1 summarizes the experimental design, including the p16-3MR reporter system, irradiation protocol, cell sorting, and single-cell RNA-sequencing workflow.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig_gif.gif" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Experimental design for evaluating whole-brain irradiation-induced cellular senescence. Young p16-3MR mice underwent fractionated WBI followed by a two-month recovery period, FACS, and single-cell RNA sequencing.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="load-the-annotated-count-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="load-the-annotated-count-matrix">Load the annotated count matrix</h3>
@@ -396,7 +413,7 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: "Cell type abundance across control and WBI-treated samples"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig: Cell type abundance across control and WBI-treated samples</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="renaming-for-clarity" class="level1">
@@ -454,7 +471,7 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig 1: Cell type abundance across control and WBI-treated samples</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="key-observation" class="level3">
 <h3 class="anchored" data-anchor-id="key-observation">Key Observation</h3>
@@ -489,7 +506,7 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: "Senescence score distribution across endothelial subtypes"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig 2: Senescence score distribution across endothelial subtypes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="key-observation-1" class="level3">
@@ -519,7 +536,7 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1354426 0.1362689 0.1373186 0.1384847 0.1537237 0.1678650</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply senescence threshold (based on your calculation)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply senescence threshold (based on the calculation)</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>threshold <span class="ot">=</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.168</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -528,7 +545,7 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data <span class="sc">|&gt;</span> <span class="fu">filter</span>(score <span class="sc">&gt;</span> threshold)</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data.filtered <span class="sc">|&gt;</span> <span class="fu">filter</span>(subtype <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Arterial-capillary EC"</span>, <span class="st">"Arterial EC"</span>, <span class="st">"Capillary-venous EC"</span>, <span class="st">"Venous EC"</span>))</span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">### Treatment Effect on Senescence</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Treatment Effect on Senescence</span></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot.data.filtered,</span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> subtype, <span class="at">y =</span> score, <span class="at">fill =</span> condition)) <span class="sc">+</span></span>
@@ -546,7 +563,7 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#coord_flip()</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_brewer(palette = "Spectral")</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig 3: Effect of WBI on endothelial senescence across subtypes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="key-observation-2" class="level3">
