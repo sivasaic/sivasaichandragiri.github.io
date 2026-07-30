@@ -44,9 +44,19 @@ This focus is supported by our lab’s previous work showing that **WBI induces 
 
 Figure 1 summarizes the experimental design, including the p16-3MR reporter system, irradiation protocol, cell sorting, and single-cell RNA-sequencing workflow.
 
-```{r experimental-design, echo=FALSE, fig.align="center", out.width="95%", fig.cap="Experimental design for evaluating whole-brain irradiation-induced cellular senescence. Young p16-3MR mice underwent fractionated WBI followed by a two-month recovery period, FACS, and single-cell RNA sequencing."}
+<div class="wide-figure">
+
+```{r experimental-design-figure, echo=FALSE, fig.align="center", out.width="100%", fig.cap="Experimental design for evaluating whole-brain irradiation-induced cellular senescence. Young p16-3MR mice underwent fractionated WBI followed by a two-month recovery period, FACS, and single-cell RNA sequencing."}
 knitr::include_graphics("WBI_plan11.png")
 ```
+
+<p class="full-image-link">
+  <a href="images/fig_gif.gif" target="_blank">
+    Open figure at full size
+  </a>
+</p>
+
+</div>
 
 ### Load the annotated count matrix
 
@@ -193,7 +203,6 @@ ggplot(filtered_Lowquality_EC_filtered,aes (x = score, y = subtype, fill = subty
 
 
 ## Results: Radiation Effects on Endothelial Subtypes {#results}
-
 
 
 ### Defining Treatment Groups
