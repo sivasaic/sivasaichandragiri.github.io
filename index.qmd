@@ -6,40 +6,36 @@ about:
   template: trestles
   links:
   - text: GitHub
-    href: link
+    href: https://github.com/sivasaic/sivasaichandragiri.github.io
+  - text: Linkedin
+    href: https://www.linkedin.com/in/siva-sai-chandragiri-3965541a2/
   - text: email
     href: sivasai-chandragiri@ou.edu
 ---
 
 ::: {.columnpage}
 
-# Hello! 👋
+# Biography
 
-Welcome to my research profile website. I'm a student in the Intro to Reproducible Data Analysis Using R course.
+I am Siva Sai Chandragiri, a Ph.D. candidate in Pathology at the University of Oklahoma Health Sciences Center and an American Heart Association Predoctoral Fellow. My research focuses on cerebrovascular aging, radiation- and chemotherapy-related brain injury, and the vascular mechanisms that contribute to cognitive decline, stroke, and dementia. Using preclinical models, imaging, and transcriptomic approaches, I study how endothelial dysfunction and senescence impair brain health across aging and disease.
 
 ## About Me
 
-Replace this section with information about yourself:
-
 - **Name:** Siva Sai Chandragiri
-- **Institution:** The University of Oklhoma HSC
-- **Research Interests:** Add your research interests here
-- **Email:** your.email@university.edu
+- **Program:** Ph.D. Candidate in Pathology
+- **Institution:** The University of Oklahoma Health Sciences Center
+- **Research Interests:** Cerebrovascular aging, endothelial senescence, radiation-induced brain injury, vascular dementia
+- **Email:** [sivasai-chandragiri@ou.edu](mailto:sivasai-chandragiri@ou.edu)
 
 ## My Research
 
-I'm interested in understanding [your topic area]. Through this course, I've learned how to:
+My work examines how vascular injury contributes to brain dysfunction in aging and disease. I am particularly interested in cerebral microhemorrhages, endothelial senescence, neurovascular coupling, and treatment-related brain injury.
 
-- Use R for data analysis
-- Create reproducible research workflows
-- Build websites to share my work
-- Manage my research projects with Git and GitHub
+This website highlights my research projects, data analysis work, and reproducible reports created using R, Quarto, and GitHub.
 
 ## This Website
 
-This site showcases my research and projects. Check out my **Projects** page to see my final report and other work!
-
-As my research progresses, I'll continue adding:
+This site showcases my research, academic projects, and scientific interests. Over time, I will continue adding:
 
 - Publications
 - Conference posters

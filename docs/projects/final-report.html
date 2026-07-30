@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2026-06-04">
+<meta name="author" content="Siva Sai Chandragiri">
+<meta name="dcterms.date" content="2026-07-31">
 
-<title>Final Report: [Your Project Title] – My Research Profile</title>
+<title>How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse – My Research Profile</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -160,18 +160,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#final-report-your-project-title" id="toc-final-report-your-project-title" class="nav-link active" data-scroll-target="#final-report-your-project-title">Final Report: [Your Project Title]</a>
+  <li><a href="#final-report" id="toc-final-report" class="nav-link active" data-scroll-target="#final-report">Final report :</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#on-this-page" id="toc-on-this-page" class="nav-link" data-scroll-target="#on-this-page">On This Page</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">The Problem: Why Brain Radiation Causes Cognitive Decline</a></li>
+  <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis">The Hypothesis: Endothelial Senescence Drives Vascular Fragility</a></li>
+  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading">Data Acquisition: From Sequencer to R</a>
   <ul class="collapse">
-  <li><a href="#example-code-block" id="toc-example-code-block" class="nav-link" data-scroll-target="#example-code-block">Example Code Block</a></li>
-  <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
+  <li><a href="#experimental-design" id="toc-experimental-design" class="nav-link" data-scroll-target="#experimental-design">Experimental Design</a></li>
+  <li><a href="#load-the-annotated-count-matrix" id="toc-load-the-annotated-count-matrix" class="nav-link" data-scroll-target="#load-the-annotated-count-matrix">Load the annotated count matrix</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#quality-control-separating-signal-from-noise-qc-was-checked-before" id="toc-quality-control-separating-signal-from-noise-qc-was-checked-before" class="nav-link" data-scroll-target="#quality-control-separating-signal-from-noise-qc-was-checked-before">Quality Control: Separating Signal from Noise {#qc was checked before}</a>
+  <ul class="collapse">
+  <li><a href="#sample-selection-and-filtering" id="toc-sample-selection-and-filtering" class="nav-link" data-scroll-target="#sample-selection-and-filtering">Sample Selection and Filtering</a></li>
+  </ul></li>
+  <li><a href="#cell-abundance" id="toc-cell-abundance" class="nav-link" data-scroll-target="#cell-abundance">First Look at the Data: Cell Type Composition</a>
+  <ul class="collapse">
+  <li><a href="#calculating-cell-type-abundance" id="toc-calculating-cell-type-abundance" class="nav-link" data-scroll-target="#calculating-cell-type-abundance">Calculating Cell Type Abundance</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#creating-visualization" id="toc-creating-visualization" class="nav-link" data-scroll-target="#creating-visualization">Creating visualization</a></li>
+  <li><a href="#renaming-for-clarity" id="toc-renaming-for-clarity" class="nav-link" data-scroll-target="#renaming-for-clarity">Renaming for clarity</a>
+  <ul class="collapse">
+  <li><a href="#key-observation" id="toc-key-observation" class="nav-link" data-scroll-target="#key-observation">Key Observation</a></li>
+  <li><a href="#senescence-analysis" id="toc-senescence-analysis" class="nav-link" data-scroll-target="#senescence-analysis">The Analysis: Finding Senescent Endothelial Cells</a>
+  <ul class="collapse">
+  <li><a href="#focusing-on-endothelial-cells" id="toc-focusing-on-endothelial-cells" class="nav-link" data-scroll-target="#focusing-on-endothelial-cells">Focusing on Endothelial Cells</a></li>
+  <li><a href="#key-observation-1" id="toc-key-observation-1" class="nav-link" data-scroll-target="#key-observation-1">Key Observation</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results: Radiation Effects on Endothelial Subtypes</a>
+  <ul class="collapse">
+  <li><a href="#defining-treatment-groups" id="toc-defining-treatment-groups" class="nav-link" data-scroll-target="#defining-treatment-groups">Defining Treatment Groups</a></li>
+  <li><a href="#key-observation-2" id="toc-key-observation-2" class="nav-link" data-scroll-target="#key-observation-2">Key Observation</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">What This Means: Accelerated Vascular Aging</a>
+  <ul class="collapse">
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#appendix-code-repository" id="toc-appendix-code-repository" class="nav-link" data-scroll-target="#appendix-code-repository">Appendix: Code Repository</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -181,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final Report: [Your Project Title]</h1>
+<h1 class="title">How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse</h1>
 </div>
 
 
@@ -191,14 +221,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Siva Sai Chandragiri </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 4, 2026</p>
+      <p class="date">July 31, 2026</p>
     </div>
   </div>
   
@@ -210,87 +240,350 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="final-report-your-project-title" class="level1">
-<h1>Final Report: [Your Project Title]</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Replace this with an introduction to your research question or project. What are you investigating? Why does it matter?</p>
+<section id="final-report" class="level1">
+<h1>Final report :</h1>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
 </section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
-<p>Describe how you conducted your analysis. What data did you use? What analyses did you perform?</p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>Share your findings here. You can include:</p>
+<section id="on-this-page" class="level2">
+<h2 class="anchored" data-anchor-id="on-this-page">On This Page</h2>
 <ul>
-<li>Text explanations</li>
-<li>Tables</li>
-<li>Figures and visualizations</li>
-<li>Code examples (if relevant)</li>
+<li><a href="#introduction">The Problem: Why Brain Radiation Causes Cognitive Decline</a></li>
+<li><a href="#hypothesis">The Hypothesis: Endothelial Senescence Drives Vascular Fragility</a></li>
+<li><a href="#data-loading">Data Acquisition: From Sequencer to R</a></li>
+<li><a href="#qc">Quality Control: Separating Signal from Noise</a></li>
+<li><a href="#cell-abundance">First Look at the Data: Cell Type Composition</a></li>
+<li><a href="#senescence-analysis">The Analysis: Finding Senescent Endothelial Cells</a></li>
+<li><a href="#results">Results: Radiation Effects on Endothelial Subtypes</a></li>
+<li><a href="#conclusion">What This Means: Accelerated Vascular Aging</a></li>
 </ul>
-<section id="example-code-block" class="level3">
-<h3 class="anchored" data-anchor-id="example-code-block">Example Code Block</h3>
-<p>Here’s a sample R code block:</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">The Problem: Why Brain Radiation Causes Cognitive Decline</h2>
+<p>Whole brain irradiation (WBI) is a standard treatment for patients with multiple brain metastases. Despite its clinical value, about 50% of long-term survivors develop progressive neurocognitive decline that severely reduces quality of life.</p>
+</section>
+<section id="hypothesis" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis">The Hypothesis: Endothelial Senescence Drives Vascular Fragility</h2>
+<p>Growing preclinical evidence points to radiation-induced cerebrovascular injury as a central driver of this decline. Here, we test the hypothesis that <strong>WBI-induced endothelial senescence promotes cerebrovascular fragility</strong>, leading to cerebral microhemorrhages (CMHs) that mimic accelerated vascular aging.</p>
+</section>
+<section id="data-loading" class="level2">
+<h2 class="anchored" data-anchor-id="data-loading">Data Acquisition: From Sequencer to R</h2>
+<section id="experimental-design" class="level3">
+<h3 class="anchored" data-anchor-id="experimental-design">Experimental Design</h3>
+<ul>
+<li><strong>Subjects</strong>: Young mice</li>
+<li><strong>Treatment</strong>: Fractionated WBI protocol (5 Gy twice weekly for four weeks total of 40 Gy)</li>
+<li><strong>Timepoint</strong>: Two months post-treatment</li>
+<li><strong>Method</strong>: 10x Genomics Chromium Single Cell 3′ Gene Expression</li>
+</ul>
+</section>
+<section id="load-the-annotated-count-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="load-the-annotated-count-matrix">Load the annotated count matrix</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a library</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create some sample data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a plot</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>x, data<span class="sc">$</span>y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data.table <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/SCHANDR5/OneDrive - University of Oklahoma/Documents/Github drive/sivasaichandragiri.github.io/projects/WBI_all_annot_v0_obs_for Final Assisgment.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="quality-control-separating-signal-from-noise-qc-was-checked-before" class="level2">
+<h2 class="anchored" data-anchor-id="quality-control-separating-signal-from-noise-qc-was-checked-before">Quality Control: Separating Signal from Noise {#qc was checked before}</h2>
+<section id="sample-selection-and-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="sample-selection-and-filtering">Sample Selection and Filtering</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data.table)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 145,985
+Columns: 13
+$ X            &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,…
+$ orig.ident   &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+$ nCount_RNA   &lt;int&gt; 7574, 2120, 5835, 1358, 3082, 3636, 2908, 5905, 2818, 937…
+$ nFeature_RNA &lt;int&gt; 2911, 1288, 2507, 864, 1654, 1902, 1625, 2501, 1599, 3750…
+$ percent.mt   &lt;dbl&gt; 4.7531027, 1.8867925, 1.3710368, 4.3446244, 1.2978585, 5.…
+$ group        &lt;chr&gt; "WT_young", "WT_young", "WT_young", "WT_young", "WT_young…
+$ mouseid      &lt;chr&gt; "CA1", "CA1", "CA1", "CA1", "CA1", "CA1", "CA1", "CA1", "…
+$ sampleid     &lt;chr&gt; "CA1", "CA1", "CA1", "CA1", "CA1", "CA1", "CA1", "CA1", "…
+$ leiden_0     &lt;int&gt; 7, 0, 2, 0, 0, 4, 3, 10, 3, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0,…
+$ barcode      &lt;chr&gt; "CA1AAACCCAAGACCTCCG-1", "CA1AAACCCACAAAGACGC-1", "CA1AAA…
+$ celltype     &lt;chr&gt; "Astrocyte", "Microglia", "Microglia/Macrophage", "Microg…
+$ subtype      &lt;chr&gt; "Astrocyte", "Low_quality_C0", "MHCII+_BAM", "Low_quality…
+$ score        &lt;dbl&gt; 0.020501215, 0.077348521, 0.071133504, 0.018898575, 0.050…</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creating a vector of the sample_ids I wan to extract </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>target_ids <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"CA1"</span>, <span class="st">"CA2"</span>, <span class="st">"CA3"</span>, <span class="st">"CA4"</span>, <span class="st">"WBI-1"</span>, <span class="st">"WBI-2"</span>, <span class="st">"WBI-3"</span>, <span class="st">"WBI-4"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to samples of interest</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>filterd_ids <span class="ot">=</span> data.table <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sampleid <span class="sc">%in%</span> target_ids)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>unique_count <span class="ot">&lt;-</span> <span class="fu">n_distinct</span>(filterd_ids<span class="sc">$</span>sampleid)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>unique_count</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(filterd_ids, <span class="at">file =</span> <span class="st">"output.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="cell-abundance" class="level2">
+<h2 class="anchored" data-anchor-id="cell-abundance">First Look at the Data: Cell Type Composition</h2>
+<section id="calculating-cell-type-abundance" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-cell-type-abundance">Calculating Cell Type Abundance</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate percentage abundance</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>celltype_abundance_wide <span class="ot">&lt;-</span> <span class="fu">table</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  filterd_ids<span class="sc">$</span>celltype,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  filterd_ids<span class="sc">$</span>sampleid</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prop.table</span>(<span class="at">margin =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  (\(x) x <span class="sc">*</span> <span class="dv">100</span>)() <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame.matrix</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"celltype"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(celltype_abundance_wide)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 11
+Columns: 9
+$ celltype &lt;chr&gt; "Astrocyte", "Endothelial", "LowQuality", "Lymphocyte", "Micr…
+$ CA1      &lt;dbl&gt; 2.8861402, 14.5258484, 2.8649963, 0.5497410, 61.0423935, 1.36…
+$ CA2      &lt;dbl&gt; 3.6057376, 13.3570207, 19.5946835, 0.7237794, 50.9935518, 1.2…
+$ CA3      &lt;dbl&gt; 2.7249576, 20.0339559, 0.5008489, 0.3480475, 61.1375212, 1.20…
+$ CA4      &lt;dbl&gt; 5.9291885, 29.8153481, 2.2022700, 1.2027782, 38.2178553, 1.54…
+$ `WBI-1`  &lt;dbl&gt; 0.4247573, 41.8234223, 1.2135922, 2.0175971, 13.1219660, 17.4…
+$ `WBI-2`  &lt;dbl&gt; 0.4029550, 18.7374077, 0.8730692, 3.1900604, 34.3183345, 26.5…
+$ `WBI-3`  &lt;dbl&gt; 8.3218707, 24.8280605, 1.4614856, 1.8053645, 16.9876204, 20.0…
+$ `WBI-4`  &lt;dbl&gt; 7.134282, 26.907906, 1.492025, 4.013034, 12.845138, 20.888355…</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># my_cols = c("celltypes", )</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to long format for plotting</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>celltype_abundance_long <span class="ot">&lt;-</span> celltype_abundance_wide <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>celltype, <span class="at">names_to =</span> <span class="st">"sample"</span>, <span class="at">values_to =</span> <span class="st">"abudance"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(celltype_abundance_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 88
+Columns: 3
+$ celltype &lt;chr&gt; "Astrocyte", "Astrocyte", "Astrocyte", "Astrocyte", "Astrocyt…
+$ sample   &lt;chr&gt; "CA1", "CA2", "CA3", "CA4", "WBI-1", "WBI-2", "WBI-3", "WBI-4…
+$ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.4029…</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="creating-visualization" class="level1">
+<h1>Creating visualization</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(celltype_abundance_long, <span class="fu">aes</span> (<span class="at">x =</span> sample, <span class="at">y =</span> abudance, <span class="at">fill =</span> celltype)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>)) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Cell type abundance across control and WBI-treated samples"</span>, <span class="at">x =</span> <span class="st">"sample"</span>, <span class="at">y =</span> <span class="st">"Cell Type Abundance (%)"</span>, <span class="at">fill =</span> <span class="st">"Cell Type"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final-report_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final-report_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: "Cell type abundance across control and WBI-treated samples"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="example-table" class="level3">
-<h3 class="anchored" data-anchor-id="example-table">Example Table</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Method</th>
-<th>Result</th>
-<th>P-value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Analysis 1</td>
-<td>Significant</td>
-<td>0.01</td>
-</tr>
-<tr class="even">
-<td>Analysis 2</td>
-<td>Not Significant</td>
-<td>0.15</td>
-</tr>
-</tbody>
-</table>
+<section id="renaming-for-clarity" class="level1">
+<h1>Renaming for clarity</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(filterd_ids<span class="sc">$</span>celltype)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+           Astrocyte          Endothelial           LowQuality 
+                2158                12837                 2227 
+          Lymphocyte            Microglia Microglia/Macrophage 
+                 786                22731                 4781 
+              Neuron           Neutrophil      Oligodendrocyte 
+                 331                  245                 2215 
+            Pericyte         SmoothMuscle 
+                5165                 2482 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality <span class="ot">=</span> filterd_ids <span class="sc">|&gt;</span> <span class="fu">filter</span>(celltype <span class="sc">!=</span><span class="st">"LowQuality"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"CA1"</span>] <span class="ot">=</span> <span class="st">"Y1"</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"CA2"</span>] <span class="ot">=</span> <span class="st">"Y2"</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"CA3"</span>] <span class="ot">=</span> <span class="st">"Y3"</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"CA4"</span>] <span class="ot">=</span> <span class="st">"Y4"</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"WBI-1"</span>] <span class="ot">=</span> <span class="st">"YWBI1"</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"WBI-2"</span>] <span class="ot">=</span> <span class="st">"YWBI2"</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"WBI-3"</span>] <span class="ot">=</span> <span class="st">"YWBI3"</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality<span class="sc">$</span>sampleid[filtered_Lowquality<span class="sc">$</span>sampleid <span class="sc">==</span> <span class="st">"WBI-4"</span>] <span class="ot">=</span> <span class="st">"YWBI4"</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality_wide <span class="ot">&lt;-</span> <span class="fu">table</span>(</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  filtered_Lowquality<span class="sc">$</span>celltype,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  filtered_Lowquality<span class="sc">$</span>sampleid</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prop.table</span>(<span class="at">margin =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  (\(x) x <span class="sc">*</span> <span class="dv">100</span>)() <span class="sc">|&gt;</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame.matrix</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"celltype"</span>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality_long <span class="ot">&lt;-</span> filtered_Lowquality_wide <span class="sc">|&gt;</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>celltype, <span class="at">names_to =</span> <span class="st">"sample"</span>, <span class="at">values_to =</span> <span class="st">"abudance"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tiff("Cellabuandance_plot.tiff", units = "in", width = 6, height = 6, res = 300)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(filtered_Lowquality_long, <span class="fu">aes</span> (<span class="at">x =</span> sample, <span class="at">y =</span> abudance, <span class="at">fill =</span> celltype)) <span class="sc">+</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>)) <span class="sc">+</span> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"sample"</span>, <span class="at">y =</span> <span class="st">"Cell Type Abundance (%)"</span>, <span class="at">fill =</span> <span class="st">"Cell Type"</span>, <span class="at">subtitle =</span> <span class="st">"Cell type abundance across control and WBI-treated samples"</span>) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Spectral"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final-report_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="key-observation" class="level3">
+<h3 class="anchored" data-anchor-id="key-observation">Key Observation</h3>
+<p><em>The control samples were dominated by microglia, whereas the WBI samples showed a more mixed cell composition with a noticeable increase in microglia/macrophage and neutrophil abundance. This shift suggests that radiation may alter the brain immune environment and promote changes in vascular-associated cell population</em></p>
+</section>
+<section id="senescence-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="senescence-analysis">The Analysis: Finding Senescent Endothelial Cells</h2>
+<section id="focusing-on-endothelial-cells" class="level3">
+<h3 class="anchored" data-anchor-id="focusing-on-endothelial-cells">Focusing on Endothelial Cells</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset to endothelial cells</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality_EC <span class="ot">=</span> <span class="fu">subset</span>(filtered_Lowquality, <span class="fu">grepl</span>(<span class="st">"EC"</span>, subtype, <span class="at">useBytes =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove fenestrated ECs (not relevant for brain vasculature)</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>filtered_Lowquality_EC_filtered <span class="ot">=</span> filtered_Lowquality_EC <span class="sc">|&gt;</span> <span class="fu">filter</span>(subtype <span class="sc">!=</span> <span class="st">"Fenestrated EC"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Senescence Score Distribution</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(filtered_Lowquality_EC_filtered,<span class="fu">aes</span> (<span class="at">x =</span> score, <span class="at">y =</span> subtype, <span class="at">fill =</span> subtype))<span class="sc">+</span> </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_y_continuous(limits = c(0, 3000), breaks = seq(0, 100, 10)) + </span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Senescence score distribution across endothelial subtypes"</span>,<span class="at">x =</span> <span class="st">"Senescent score"</span>, <span class="at">y =</span> <span class="st">"Subtype"</span>) <span class="sc">+</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co"># fill = "Cell Type") +</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Spectral"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final-report_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: "Senescence score distribution across endothelial subtypes"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="key-observation-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-observation-1">Key Observation</h3>
+<p><em>The Arterial EC and Arterial-capillary EC subtypes appear to have the highest senescence scores, with medians above the other endothelial groups. In contrast, Stressed venous EC and Venous EC show lower overall senescence scores, suggesting subtype-specific differences in endothelial aging</em></p>
 </section>
 </section>
-<section id="discussion" class="level2">
-<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<p>What do your results mean? How do they relate to your research question? What limitations exist? What would you do next?</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results: Radiation Effects on Endothelial Subtypes</h2>
+<section id="defining-treatment-groups" class="level3">
+<h3 class="anchored" data-anchor-id="defining-treatment-groups">Defining Treatment Groups</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define experimental conditions</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>control <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Y1"</span>, <span class="st">"Y2"</span>, <span class="st">"Y3"</span>, <span class="st">"Y4"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"YWBI1"</span>, <span class="st">"YWBI2"</span>, <span class="st">"YWBI3"</span>, <span class="st">"YWBI4"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>plot.data <span class="ot">=</span> filtered_Lowquality_EC_filtered <span class="sc">|&gt;</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">condition =</span> <span class="fu">case_when</span>(</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    sampleid <span class="sc">%in%</span> control <span class="sc">~</span> <span class="st">"Control"</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    sampleid <span class="sc">%in%</span> treatment <span class="sc">~</span> <span class="st">"Treatment"</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(<span class="fu">sort</span>(filtered_Lowquality_EC_filtered<span class="sc">$</span>score))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1354426 0.1362689 0.1373186 0.1384847 0.1537237 0.1678650</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply senescence threshold (based on your calculation)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>threshold <span class="ot">=</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.168</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus on relevant EC subtypes</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data <span class="sc">|&gt;</span> <span class="fu">filter</span>(score <span class="sc">&gt;</span> threshold)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data.filtered <span class="sc">|&gt;</span> <span class="fu">filter</span>(subtype <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Arterial-capillary EC"</span>, <span class="st">"Arterial EC"</span>, <span class="st">"Capillary-venous EC"</span>, <span class="st">"Venous EC"</span>))</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">### Treatment Effect on Senescence</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot.data.filtered,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> subtype, <span class="at">y =</span> score, <span class="at">fill =</span> condition)) <span class="sc">+</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#stat_boxplot(geom = "errorbar", width = 0.2) +</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"% of Senescent cells"</span>, <span class="at">y =</span> <span class="st">"Subtypes"</span>, <span class="at">subtitle =</span> <span class="st">"Effect of WBI on endothelial senescence across subtypes"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final-report_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#coord_flip()</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_brewer(palette = "Spectral")</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">###| fig-cap: </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="conclusions" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
-<p>Summarize your findings and their implications.</p>
+<section id="key-observation-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-observation-2">Key Observation</h3>
+<p><em>The treatment group shows slightly higher senescence percentages than the control group across most endothelial subtypes, especially in arterial-capillary and arterial ECs. Overall, the boxplots suggest a modest increase in endothelial senescence after WBI, with the largest shift seen in the more arterial-like cell populations</em></p>
+</section>
+<section id="statistical-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h3>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">What This Means: Accelerated Vascular Aging</h2>
+<section id="key-findings" class="level3">
+<h3 class="anchored" data-anchor-id="key-findings">Key Findings</h3>
+<ol type="1">
+<li><strong>WBI induces endothelial senescence</strong> across multiple EC subtypes</li>
+<li><strong>Vascular-specific effects</strong> suggest blood-brain barrier compromise</li>
+<li><strong>Senescence patterns</strong> resemble accelerated vascular aging phenotypes</li>
+</ol>
+</section>
+<section id="next-steps" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps">Next Steps</h3>
+<ul>
+<li>Differential expression analysis to identify senescence-associated genes</li>
+<li>Pathway enrichment analysis for mechanistic insights</li>
+<li>Integration with vascular fragility markers</li>
+</ul>
+<hr>
+</section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Add any references to papers, data sources, or resources you used.</p>
-<hr>
-<p><strong>Last updated:</strong> June 2026</p>
+<p><em>Add relevant citations here</em></p>
+</section>
+<section id="appendix-code-repository" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-code-repository">Appendix: Code Repository</h2>
+<p>All code available at: [your GitHub link]</p>
 
 
 </section>
