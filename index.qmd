@@ -4,44 +4,41 @@ toc: false
 image: "Siva jpg.png"
 about:
   template: trestles
+  image-shape: round
   links:
-  - text: GitHub
+  - icon: person-fill
+    text: ORCID
+    href: "https://orcid.org/0000-0002-3037-3014"
+  - icon: github
+    text: GitHub
     href: https://github.com/sivasaic/sivasaichandragiri.github.io
-  - text: Linkedin
+  - icon: linkedin
+    text: Linkedin
     href: https://www.linkedin.com/in/siva-sai-chandragiri-3965541a2/
-  - text: email
+  - icon: envelope-fill
+    text: email
     href: sivasai-chandragiri@ou.edu
 ---
 
-::: {.columnpage}
-
-# Biography
+::: column-page
+## Biography
 
 I am Siva Sai Chandragiri, a Ph.D. candidate in Pathology at the University of Oklahoma Health Sciences Center and an American Heart Association Predoctoral Fellow. My research focuses on cerebrovascular aging, radiation- and chemotherapy-related brain injury, and the vascular mechanisms that contribute to cognitive decline, stroke, and dementia. Using preclinical models, imaging, and transcriptomic approaches, I study how endothelial dysfunction and senescence impair brain health across aging and disease.
 
-## About Me
+## Research Goals
 
-- **Name:** Siva Sai Chandragiri
-- **Program:** Ph.D. Candidate in Pathology
-- **Institution:** The University of Oklahoma Health Sciences Center
-- **Research Interests:** Cerebrovascular aging, endothelial senescence, radiation-induced brain injury, vascular dementia
-- **Email:** [sivasai-chandragiri@ou.edu](mailto:sivasai-chandragiri@ou.edu)
+For my PhD dissertation project, 
 
-## My Research
+I am investigating how clinically relevant whole-brain X-ray irradiation affects contributes to cerebrovascualr dysfunction in aging and disease. I am particularly interested in cerebral microhemorrhages, endothelial senescence, neurovascular coupling, and treatment-related brain injury.Although whole-brain irradiation is an effective treatment for patients with brain metastases, it can also cause long-term cerebrovascular injury, blood-brain barrier dysfunction, and cognitive decline. Endothelial cells are especially important because they help maintain vascular integrity, regulate cerebral blood flow, and support neurovascular function. However, the specific role of endothelial senescence in radiation-induced vascular fragility remains incompletely understood.
 
-My work examines how vascular injury contributes to brain dysfunction in aging and disease. I am particularly interested in cerebral microhemorrhages, endothelial senescence, neurovascular coupling, and treatment-related brain injury.
+I aim to use single-cell RNA sequencing data and R-based analysis to characterize cell type abundance, identify senescence-associated transcriptional changes, and compare endothelial subtypes between control and irradiated mice. By studying how whole-brain irradiation alters endothelial cell states and promotes senescence-like changes, this project may help reveal mechanisms underlying radiation-induced cerebrovascular dysfunction and identify potential targets for protecting brain health.
 
-This website highlights my research projects, data analysis work, and reproducible reports created using R, Quarto, and GitHub.
 
-## This Website
+## Experience
 
-This site showcases my research, academic projects, and scientific interests. Over time, I will continue adding:
+My experience includes neuroscience research, cerebrovascular biology, mouse surgery and animal work, molecular and cellular techniques, microscopy, and data analysis in R. I also have experience with scRNA-seq, bioinformatic analysis, scientific writing, poster presentations, teaching, and manuscript preparation.
 
-- Publications
-- Conference posters
-- New analyses and projects
-- Additional resources
+I am an American Heart Association Predoctoral Fellowship recipient, and I am especially interested in grant writing and research development. After completing my dissertation, I plan to pursue a postdoctoral fellowship to continue building my research in brain aging, cerebrovascular dysfunction, and vascular contributions to cognitive decline.
 
----
-
-**Keep exploring!** Navigate using the menu above.
+You can find more details about my ongoing [projects](#projects), [publications](#publications), and additional [research experience](#experience) on this website.
+:::

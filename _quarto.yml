@@ -4,7 +4,7 @@ project:
   output-dir: docs
 
 website:
-  title: "My Research Profile"
+  title: "Siva Sai Chandragiri"
   navbar:
     search: true
     right:

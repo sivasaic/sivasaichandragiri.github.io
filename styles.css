@@ -1,40 +1,104 @@
 /* Custom styles for student research profile */
 
-/* Main content styling */
+/* Entire webpage */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  background-color: #eaf6ff;
+  color: #263238;
 }
 
-/* Headings */
-h1, h2, h3 {
-  color: #2c3e50;
+/* Main report content area */
+main,
+.main-container,
+#quarto-content {
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 30px 45px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(31, 78, 121, 0.12);
+}
+
+/* Main title/header area for R Markdown and Quarto */
+header,
+#title-block-header,
+.quarto-title-banner {
+  background-color: #1f4e79;
+  color: #ffffff;
+  padding: 25px 35px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+/* Main report title */
+h1.title,
+.quarto-title h1,
+#title-block-header h1 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+/* Subtitle, author, and date in title area */
+.subtitle,
+.author,
+.date,
+.quarto-title-meta {
+  color: #eaf6ff;
+}
+
+/* Section headings */
+h1,
+h2,
+h3 {
+  color: #234a68;
   margin-top: 1.5em;
+}
+
+/* Main section headings */
+h2 {
+  border-bottom: 2px solid #9ccbe8;
+  padding-bottom: 0.3em;
+}
+
+/* Smaller headings */
+h3 {
+  color: #326b91;
 }
 
 /* Links */
 a {
-  color: ##2e24ad;
+  color: #245ea8;
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
+  color: #163a5f;
   text-decoration: underline;
-  color: #2980b9;
 }
 
-/* Code blocks */
+/* Inline code */
 code {
-  background-color: #8f3711;
+  background-color: #e3f2fd;
+  color: #163a5f;
   padding: 0.2em 0.4em;
   border-radius: 3px;
 }
 
+/* Code blocks */
 pre {
-  background-color: #f4f4f4;
+  background-color: #f5f9fc;
+  border-left: 4px solid #5fa8d3;
   padding: 1em;
   border-radius: 5px;
   overflow-x: auto;
+}
+
+/* Prevent inline-code style from affecting code blocks */
+pre code {
+  background-color: transparent;
+  padding: 0;
 }
 
 /* Tables */
@@ -42,29 +106,68 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 1em 0;
+  background-color: #ffffff;
 }
 
 table th,
 table td {
-  border: 1px solid #ddd;
+  border: 1px solid #cbdde8;
   padding: 0.75em;
   text-align: left;
 }
 
 table th {
-  background-color: #ecf0f1;
+  background-color: #dceef8;
+  color: #1f4e79;
   font-weight: bold;
 }
 
+table tr:nth-child(even) {
+  background-color: #f6fbfe;
+}
+
 table tr:hover {
-  background-color: #f9f9f9;
+  background-color: #eaf6ff;
 }
 
 /* Blockquotes */
 blockquote {
-  border-left: 4px solid #3498db;
-  padding-left: 1em;
-  color: #666;
+  background-color: #f4faff;
+  border-left: 5px solid #3498db;
+  padding: 0.8em 1em;
+  color: #455a64;
   font-style: italic;
   margin: 1em 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Figure captions */
+.figure-caption,
+figcaption {
+  color: #526b7a;
+  font-size: 0.92em;
+  font-style: italic;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Improve appearance on smaller screens */
+@media screen and (max-width: 768px) {
+  main,
+  .main-container,
+  #quarto-content {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  header,
+  #title-block-header,
+  .quarto-title-banner {
+    padding: 20px;
+  }
 }
