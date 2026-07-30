@@ -81,7 +81,7 @@
     "href": "projects/final-report.html#hypothesis",
     "title": "How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse",
     "section": "Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility",
-    "text": "Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility\nGrowing preclinical evidence points to radiation-induced cerebrovascular injury as a central driver of this decline. Here, we test the hypothesis that WBI-induced endothelial senescence promotes cerebrovascular fragility, leading to cerebral microhemorrhages (CMHs) that mimic accelerated vascular aging."
+    "text": "Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility\nGrowing preclinical evidence points to radiation-induced cerebrovascular injury as a central driver of this decline. Here, we test the hypothesis that WBI-induced endothelial senescence promotes cerebrovascular fragility, leading to cerebral microhemorrhages (CMHs) that mimic accelerated vascular aging.\n\n\n\n\n\nProposed mechanism linking whole-brain irradiation to cerebrovascular fragility. Radiation-induced DNA damage promotes endothelial cell senescence, which may increase SASP signaling and oxidative stress, ultimately weakening the cerebral vasculature."
   },
   {
     "objectID": "projects/final-report.html#endothelial-focus",
@@ -123,7 +123,7 @@
     "href": "projects/final-report.html#results",
     "title": "How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse",
     "section": "Results: Radiation Effects on Endothelial Subtypes",
-    "text": "Results: Radiation Effects on Endothelial Subtypes\n\nDefining Treatment Groups\n\n# Define experimental conditions\n\ncontrol = c(\"Y1\", \"Y2\", \"Y3\", \"Y4\")\n\ntreatment = c(\"YWBI1\", \"YWBI2\", \"YWBI3\", \"YWBI4\")\n\nplot.data = filtered_Lowquality_EC_filtered |&gt;\n  mutate(condition = case_when(\n    sampleid %in% control ~ \"Control\",\n    sampleid %in% treatment ~ \"Treatment\"\n  ))\n\n\ntail(sort(filtered_Lowquality_EC_filtered$score))\n\n[1] 0.1354426 0.1362689 0.1373186 0.1384847 0.1537237 0.1678650\n\n# Apply senescence threshold (based on the calculation)\n\nthreshold = 0.5 * 0.168\n\n# Focus on relevant EC subtypes\n\nplot.data.filtered = plot.data |&gt; filter(score &gt; threshold)\nplot.data.filtered = plot.data.filtered |&gt; filter(subtype %in% c(\"Arterial-capillary EC\", \"Arterial EC\", \"Capillary-venous EC\", \"Venous EC\"))\n\n## Treatment Effect on Senescence\n\nggplot(plot.data.filtered,\n       aes(x = subtype, y = score, fill = condition)) +\n  #stat_boxplot(geom = \"errorbar\", width = 0.2) +\n  geom_boxplot() +\n  theme_classic() +\n  labs(x = \"% of Senescent cells\", y = \"Subtypes\", subtitle = \"Effect of WBI on endothelial senescence across subtypes\" )\n\n\n\n\n\n\n\n  #coord_flip()\n  #scale_fill_brewer(palette = \"Spectral\")\n\n###| fig 3: Effect of WBI on endothelial senescence across subtypes\n\n\n\nKey Observation\nThe treatment group shows slightly higher senescence percentages than the control group across most endothelial subtypes, especially in arterial-capillary and arterial ECs. Overall, the boxplots suggest a modest increase in endothelial senescence after WBI, with the largest shift seen in the more arterial-like cell populations\n\n\nStatistical Analysis"
+    "text": "Results: Radiation Effects on Endothelial Subtypes\n\nDefining Treatment Groups\n\n# Define experimental conditions\n\ncontrol = c(\"Y1\", \"Y2\", \"Y3\", \"Y4\")\n\ntreatment = c(\"YWBI1\", \"YWBI2\", \"YWBI3\", \"YWBI4\")\n\nplot.data = filtered_Lowquality_EC_filtered |&gt;\n  mutate(condition = case_when(\n    sampleid %in% control ~ \"Control\",\n    sampleid %in% treatment ~ \"Treatment\"\n  ))\n\n\ntail(sort(filtered_Lowquality_EC_filtered$score))\n\n[1] 0.1354426 0.1362689 0.1373186 0.1384847 0.1537237 0.1678650\n\n# Apply senescence threshold (based on the calculation)\n\nthreshold = 0.5 * 0.168\n\n# Focus on relevant EC subtypes\n\nplot.data.filtered = plot.data |&gt; filter(score &gt; threshold)\nplot.data.filtered = plot.data.filtered |&gt; filter(subtype %in% c(\"Arterial-capillary EC\", \"Arterial EC\", \"Capillary-venous EC\", \"Venous EC\"))\n\n## Treatment Effect on Senescence\n\nggplot(plot.data.filtered,\n       aes(x = subtype, y = score, fill = condition)) +\n  #stat_boxplot(geom = \"errorbar\", width = 0.2) +\n  geom_boxplot() +\n  theme_classic() +\n  labs(x = \"% of Senescent cells\", y = \"Subtypes\", subtitle = \"Effect of WBI on endothelial senescence across subtypes\" )\n\n\n\n\n\n\n\n  #coord_flip()\n  #scale_fill_brewer(palette = \"Spectral\")\n\n###| fig 3: Effect of WBI on endothelial senescence across subtypes\n\n\n\nKey Observation\nThe treatment group shows slightly higher senescence percentages than the control group across most endothelial subtypes, especially in arterial-capillary and arterial ECs. Overall, the boxplots suggest a modest increase in endothelial senescence after WBI, with the largest shift seen in the more arterial-like cell populations"
   },
   {
     "objectID": "projects/final-report.html#conclusion",
@@ -137,14 +137,14 @@
     "href": "projects/final-report.html#references",
     "title": "How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse",
     "section": "References",
-    "text": "References\nAdd relevant citations here"
+    "text": "References\nKiss, T., Ungvari, A., Gulej, R. et al. Whole brain irradiation–induced endothelial dysfunction in the mouse brain. GeroScience 46, 531–541 (2024). https://doi.org/10.1007/s11357-023-00990-4\nGulej, R., Nyúl-Tóth, Á., Ahire, C. et al. Elimination of senescent cells by treatment with Navitoclax/ABT263 reverses whole brain irradiation-induced blood-brain barrier disruption in the mouse brain. GeroScience 45, 2983–3002 (2023). https://doi.org/10.1007/s11357-023-00870-x"
   },
   {
     "objectID": "projects/final-report.html#appendix-code-repository",
     "href": "projects/final-report.html#appendix-code-repository",
     "title": "How Brain Radiation Affects Blood Vessel Cells: A Single-Cell RNA-Seq Glimpse",
     "section": "Appendix: Code Repository",
-    "text": "Appendix: Code Repository\nAll code available at: [your GitHub link]"
+    "text": "Appendix: Code Repository\nAll code available at: https://github.com/sivasaic/sivasaichandragiri.github.io"
   },
   {
     "objectID": "index.html",

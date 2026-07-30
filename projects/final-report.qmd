@@ -23,6 +23,9 @@ Whole brain irradiation (WBI) is a standard treatment for patients with multiple
 ## Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility {#hypothesis}
 
 Growing preclinical evidence points to radiation-induced cerebrovascular injury as a central driver of this decline. Here, we test the hypothesis that **WBI-induced endothelial senescence promotes cerebrovascular fragility**, leading to cerebral microhemorrhages (CMHs) that mimic accelerated vascular aging.
+```{r wbi-hypothesis-figure, echo=FALSE, fig.align="center", out.width="65%", fig.cap="Proposed mechanism linking whole-brain irradiation to cerebrovascular fragility. Radiation-induced DNA damage promotes endothelial cell senescence, which may increase SASP signaling and oxidative stress, ultimately weakening the cerebral vasculature."}
+knitr::include_graphics("WBI_fig.png")
+```
 
 ## Why Focus on Endothelial Cells? {#endothelial-focus}
 
@@ -42,7 +45,7 @@ This focus is supported by our lab’s previous work showing that **WBI induces 
 Figure 1 summarizes the experimental design, including the p16-3MR reporter system, irradiation protocol, cell sorting, and single-cell RNA-sequencing workflow.
 
 ```{r experimental-design, echo=FALSE, fig.align="center", out.width="95%", fig.cap="Experimental design for evaluating whole-brain irradiation-induced cellular senescence. Young p16-3MR mice underwent fractionated WBI followed by a two-month recovery period, FACS, and single-cell RNA sequencing."}
-knitr::include_graphics("fig_gif.gif")
+knitr::include_graphics("WBI_plan11.png")
 ```
 
 ### Load the annotated count matrix
@@ -241,8 +244,6 @@ ggplot(plot.data.filtered,
 *The treatment group shows slightly higher senescence percentages than the control group across most endothelial subtypes, especially in arterial-capillary and arterial ECs. Overall, the boxplots suggest a modest increase in endothelial senescence after WBI, with the largest shift seen in the more arterial-like cell populations*
 
 
-### Statistical Analysis
-
 ## What This Means: Accelerated Vascular Aging {#conclusion}
 
 ### Key Findings
@@ -261,8 +262,10 @@ ggplot(plot.data.filtered,
 
 ## References
 
-*Add relevant citations here*
+*Kiss, T., Ungvari, A., Gulej, R. et al. Whole brain irradiation–induced endothelial dysfunction in the mouse brain. GeroScience 46, 531–541 (2024). https://doi.org/10.1007/s11357-023-00990-4*
+
+*Gulej, R., Nyúl-Tóth, Á., Ahire, C. et al. Elimination of senescent cells by treatment with Navitoclax/ABT263 reverses whole brain irradiation-induced blood-brain barrier disruption in the mouse brain. GeroScience 45, 2983–3002 (2023). https://doi.org/10.1007/s11357-023-00870-x*
 
 ## Appendix: Code Repository
 
-All code available at: [your GitHub link]
+All code available at: https://github.com/sivasaic/sivasaichandragiri.github.io
