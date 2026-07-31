@@ -35,7 +35,7 @@ This focus is supported by our lab’s previous work showing that **WBI induces 
 
 ## Experimental Design
 
-- **Subjects:** Young mice  
+- **Subjects:** Young mice [n=4 both groups]  
 - **Treatment:** Fractionated Whole-Brain X-ray Irradiation (WBI) at a clinically relevant dose of 5 Gy twice                   weekly for four weeks, for a total dose of 40 Gy  
 - **Timepoint:** Two months post-treatment; FACS and scRNA-seq readouts   
 - **Method:** 10x Genomics Chromium Single Cell 3′ Gene Expression
@@ -164,7 +164,7 @@ ggplot(filtered_Lowquality_long, aes (x = sample, y = abudance, fill = celltype)
   labs(x = "sample", y = "Cell Type Abundance (%)", fill = "Cell Type", subtitle = "Cell type abundance across control and WBI-treated samples") +
   scale_fill_brewer(palette = "Spectral")
 
-###| fig 1: Cell type abundance across control and WBI-treated samples
+###| fig 1: Cell type abundance across control and WBI-treated samples. [Y= Young Control, YWBI= Young WBI; n=4 both groups]
 ```
 ### Key Observation
 
