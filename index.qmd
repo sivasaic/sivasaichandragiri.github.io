@@ -23,22 +23,18 @@ about:
 ::: column-page
 ## Biography
 
-I am Siva Sai Chandragiri, a Ph.D. candidate in Pathology at the University of Oklahoma Health Sciences Center and an American Heart Association Predoctoral Fellow. My research focuses on cerebrovascular aging, radiation- and chemotherapy-related brain injury, and the vascular mechanisms that contribute to cognitive decline, stroke, and dementia. Using preclinical models, imaging, and transcriptomic approaches, I study how endothelial dysfunction and senescence impair brain health across aging and disease.
+I am Siva Sai Chandragiri, a Ph.D. candidate in Pathology at the University of Oklahoma Health Sciences Center and an American Heart Association Predoctoral Fellow. **My research focuses on cerebrovascular aging, radiation- and chemotherapy-related brain injury, and the vascular mechanisms that contribute to cognitive decline, stroke, and dementia**. Using preclinical models, imaging, and transcriptomic approaches, I study how endothelial dysfunction and senescence impair brain health across aging and disease.
 
 ## Research Goals
 
-For my PhD dissertation project, 
-
-I am investigating how clinically relevant whole-brain X-ray irradiation affects contributes to cerebrovascualr dysfunction in aging and disease. I am particularly interested in cerebral microhemorrhages, endothelial senescence, neurovascular coupling, and treatment-related brain injury.Although whole-brain irradiation is an effective treatment for patients with brain metastases, it can also cause long-term cerebrovascular injury, blood-brain barrier dysfunction, and cognitive decline. Endothelial cells are especially important because they help maintain vascular integrity, regulate cerebral blood flow, and support neurovascular function. However, the specific role of endothelial senescence in radiation-induced vascular fragility remains incompletely understood.
-
-I aim to use single-cell RNA sequencing data and R-based analysis to characterize cell type abundance, identify senescence-associated transcriptional changes, and compare endothelial subtypes between control and irradiated mice. By studying how whole-brain irradiation alters endothelial cell states and promotes senescence-like changes, this project may help reveal mechanisms underlying radiation-induced cerebrovascular dysfunction and identify potential targets for protecting brain health.
+I am investigating how clinically relevant whole-brain X-ray irradiation affects contributes to cerebrovascualr dysfunction in aging and disease. I am particularly interested in cerebral microhemorrhages, endothelial senescence, neurovascular coupling, and treatment-related brain injury. **Although whole-brain irradiation is an effective treatment for patients with brain metastases, it can also cause long-term cerebrovascular injury, blood-brain barrier dysfunction, and cognitive decline**. Endothelial cells are especially important because they help maintain vascular integrity, regulate cerebral blood flow, and support neurovascular function. *However, the specific role of endothelial senescence in radiation-induced vascular fragility remains incompletely understood*.
 
 
 ## Experience
 
 My experience includes neuroscience research, cerebrovascular biology, mouse surgery and animal work, molecular and cellular techniques, microscopy, and data analysis in R. I also have experience with scRNA-seq, bioinformatic analysis, scientific writing, poster presentations, teaching, and manuscript preparation.
 
-I am an American Heart Association Predoctoral Fellowship recipient, and I am especially interested in grant writing and research development. After completing my dissertation, I plan to pursue a postdoctoral fellowship to continue building my research in brain aging, cerebrovascular dysfunction, and vascular contributions to cognitive decline.
+*I am an American Heart Association Predoctoral Fellowship recipient, and I am especially interested in grant writing and research development. After completing my dissertation, I plan to pursue a postdoctoral fellowship to continue building my research in brain aging, cerebrovascular dysfunction, and vascular contributions to cognitive decline*.
 
 You can find more details about my ongoing [projects](#projects), [publications](#publications), and additional [research experience](#experience) on this website.
 :::

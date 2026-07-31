@@ -18,7 +18,7 @@ date: 2026-07-31
 
 ## The Problem: Why Brain Radiation Causes Cognitive Decline {#introduction}
 
-Whole brain irradiation (WBI) is a standard treatment for patients with multiple brain metastases. Despite its clinical value, about 50% of long-term survivors develop progressive neurocognitive decline that severely reduces quality of life.
+Whole brain irradiation (WBI) is a standard treatment for patients with multiple brain metastases. Despite its clinical value, *about 50% of long-term survivors develop progressive neurocognitive decline that severely reduces quality of life*.
 
 ## Hypothesis: WBI-Induced Endothelial Senescence Drives Vascular Fragility {#hypothesis}
 
@@ -271,9 +271,9 @@ ggplot(plot.data.filtered,
 
 ## References
 
-*Kiss, T., Ungvari, A., Gulej, R. et al. Whole brain irradiation–induced endothelial dysfunction in the mouse brain. GeroScience 46, 531–541 (2024). https://doi.org/10.1007/s11357-023-00990-4*
+1.*Kiss, T., Ungvari, A., Gulej, R. et al. Whole brain irradiation–induced endothelial dysfunction in the mouse brain. GeroScience 46, 531–541 (2024). https://doi.org/10.1007/s11357-023-00990-4*
 
-*Gulej, R., Nyúl-Tóth, Á., Ahire, C. et al. Elimination of senescent cells by treatment with Navitoclax/ABT263 reverses whole brain irradiation-induced blood-brain barrier disruption in the mouse brain. GeroScience 45, 2983–3002 (2023). https://doi.org/10.1007/s11357-023-00870-x*
+2. *Gulej, R., Nyúl-Tóth, Á., Ahire, C. et al. Elimination of senescent cells by treatment with Navitoclax/ABT263 reverses whole brain irradiation-induced blood-brain barrier disruption in the mouse brain. GeroScience 45, 2983–3002 (2023). https://doi.org/10.1007/s11357-023-00870-x*
 
 ## Appendix: Code Repository
 
