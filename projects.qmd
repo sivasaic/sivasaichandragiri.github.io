@@ -4,6 +4,7 @@ title: "My Projects"
 
 # Final Project for CELL 6351 Course – Intro to Reproducible Data Analysis Using R
 
+
 ## Project Story and Motivation
 
 In 2023, I joined the Csiszar and Ungvari Vascular Cognitive Impairment and Dementia research group in the Department of Neurosurgery at the University of Oklahoma Health Sciences Center. **My research focused on using whole-brain irradiation as an experimental tool to induce cellular senescence and model features of accelerated brain aging**.
