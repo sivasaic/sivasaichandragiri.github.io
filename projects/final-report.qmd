@@ -226,7 +226,8 @@ tail(sort(filtered_Lowquality_EC_filtered$score))
 
 # Apply senescence threshold (based on the calculation)
 
-threshold = 0.5 * 0.168
+#threshold = 0.8 * 0.168
+threshold = quantile(plot.data$score, 0.8)
 
 # Focus on relevant EC subtypes
 

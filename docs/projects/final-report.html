@@ -546,21 +546,22 @@ $ abudance &lt;dbl&gt; 2.8861402, 3.6057376, 2.7249576, 5.9291885, 0.4247573, 0.
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply senescence threshold (based on the calculation)</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>threshold <span class="ot">=</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.168</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus on relevant EC subtypes</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data <span class="sc">|&gt;</span> <span class="fu">filter</span>(score <span class="sc">&gt;</span> threshold)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data.filtered <span class="sc">|&gt;</span> <span class="fu">filter</span>(subtype <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Arterial-capillary EC"</span>, <span class="st">"Arterial EC"</span>, <span class="st">"Capillary-venous EC"</span>, <span class="st">"Venous EC"</span>))</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Treatment Effect on Senescence</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot.data.filtered,</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> subtype, <span class="at">y =</span> score, <span class="at">fill =</span> condition)) <span class="sc">+</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#stat_boxplot(geom = "errorbar", width = 0.2) +</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"% of Senescent cells"</span>, <span class="at">y =</span> <span class="st">"Subtypes"</span>, <span class="at">subtitle =</span> <span class="st">"Effect of WBI on endothelial senescence across subtypes"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#threshold = 0.8 * 0.168</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>threshold <span class="ot">=</span> <span class="fu">quantile</span>(plot.data<span class="sc">$</span>score, <span class="fl">0.8</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus on relevant EC subtypes</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data <span class="sc">|&gt;</span> <span class="fu">filter</span>(score <span class="sc">&gt;</span> threshold)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plot.data.filtered <span class="ot">=</span> plot.data.filtered <span class="sc">|&gt;</span> <span class="fu">filter</span>(subtype <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Arterial-capillary EC"</span>, <span class="st">"Arterial EC"</span>, <span class="st">"Capillary-venous EC"</span>, <span class="st">"Venous EC"</span>))</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Treatment Effect on Senescence</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot.data.filtered,</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> subtype, <span class="at">y =</span> score, <span class="at">fill =</span> condition)) <span class="sc">+</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#stat_boxplot(geom = "errorbar", width = 0.2) +</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"% of Senescent cells"</span>, <span class="at">y =</span> <span class="st">"Subtypes"</span>, <span class="at">subtitle =</span> <span class="st">"Effect of WBI on endothelial senescence across subtypes"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

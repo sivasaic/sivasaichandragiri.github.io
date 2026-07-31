@@ -14,8 +14,8 @@ Before I joined the project, our laboratory primarily used a cesium-137 gamma ir
 *I completed the required Radiation Safety Training and collaborated with the Radiation Oncology Department to establish a safe and reproducible whole-brain X-ray irradiation protocol. Over approximately 24 months, we evaluated irradiation settings, positioning methods, shielding, dose delivery, safety procedures, and fractionation schedules. Our objective was not only to generate experimental data, but also to develop a clinically relevant protocol that could be reproduced and incorporated into a formal standard operating procedure*
 
 
-[**Request Access to the Final Report - Currently Under Review**](mailto:Sivasai-chandragiri@ou.edu?subject=Request%20for%20Final%20Report)
 
+[**View Final Report** →](projects/final-report.qmd)
 
 ---
 
